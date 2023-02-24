@@ -1,10 +1,12 @@
 {
     "titles": {
-        "experience": "Work Experience",
+        "projects": "Projects",
+        "experience": "Employment History",
         "education": "Education",
         "skills": "Skills",
         "languages": "Languages",
-        "open_source": "Open Source"
+        "open_source": "Open Source",
+        "certifications": "Licenses & Certifications"
     },
     "labels": {
         "email": "Email",

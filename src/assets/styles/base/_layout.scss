@@ -24,7 +24,7 @@ body {
     .footer {
         grid-area: footer;
         padding: $spacing-y 0;
-        background-color: $gray-light;
+        background-color: $brand-sand;
     }
 
     @include mq(lg) {

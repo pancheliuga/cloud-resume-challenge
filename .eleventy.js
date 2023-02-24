@@ -47,7 +47,7 @@ module.exports = function (config) {
     config.addLayoutAlias('resume', 'resume.njk')
 
     // Collections
-    const collections = ['work', 'education']
+    const collections = ['work', 'education', 'projects', 'certifications']
     collections.forEach((name) => {
         config.addCollection(name, function (collection) {
             const folderRegex = new RegExp(`\/${name}\/`)
@@ -61,10 +61,18 @@ module.exports = function (config) {
                 return 0
             }
 
+            const byDisplayOrder = (a, b) => {
+                if (a.data.displayOrder && b.data.displayOrder) {
+                    return Number(b.data.displayOrder) > Number(a.data.displayOrder) ? 1 : -1
+                }
+                return 0
+            }
+
             return collection
                 .getAllSorted()
                 .filter(inEntryFolder)
                 .sort(byStartDate)
+                .sort(byDisplayOrder)
         })
     })
 

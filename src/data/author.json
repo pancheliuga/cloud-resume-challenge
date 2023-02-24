@@ -1,44 +1,41 @@
 {
-    "name": "Anna Quincey",
-    "occupation": "Front-End Developer",
-    "location": "Vienna, AT",
-    "avatar": "avatar.jpg",
-    "pronouns": "she/her",
-    "email": "anna.quincey@gmail.com",
-    "telephone": "+01 23 456 789",
-    "website": "https://annaquincey.dev",
+    "name": "Oleksandr Pancheliuga",
+    "occupation": "DevOps/Cloud Engineer",
+    "location": "Rivne, Ukraine",
+    "avatar": "avatar.png",
+    "pronouns": "he/him",
+    "email": "pancheliuga.o@gmail.com",
+    "telephone": "+38 097 645 01 74",
+    "website": "https://pancheliuga.com",
     "skills": [
-        "HTML",
-        "CSS",
-        "Javascript / ES6",
-        "UI Design",
-        "React",
-        "Git"
+        "AWS (EC2, S3, ECS, Lambda, VPC, Cloud Formation, RDS, DynamoDB, ELB, Auto scaling, IAM, Route53, SNS, Cloud Trail, Cloud Watch, AWS Conﬁg and many other services)",
+        "Python, Bash, Javascript",
+        "Terraform, GitHub Actions",
+        "Effective Time Management",
+        "Ability to communicate effectively",
+        "Excitement for learning"
     ],
     "languages": [
         {
             "name": "English",
+            "level": "B2"
+        },
+        {
+            "name": "Ukrainian",
             "level": "native"
-        },
-        {
-            "name": "German",
-            "level": "fluent"
-        },
-        {
-            "name": "French",
-            "level": "basic"
         }
     ],
     "social": [
         {
             "name": "Github",
-            "user": "@annaquincey",
-            "url": "https://github.com/annaquincey"
+            "user": "@pancheliuga",
+            "url": "https://github.com/pancheliuga"
         },
         {
             "name": "LinkedIn",
-            "user": "AnnaQncy",
-            "url": "https://www.linkedin.com/in/annaquincey"
+            "user": "OleksandrPancheliuga",
+            "url": "https://www.linkedin.com/in/pancheliuga"
         }
     ]
 }
+

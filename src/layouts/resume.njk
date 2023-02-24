@@ -14,6 +14,13 @@ layout: base
             </section>
         {% endif %}
 
+        <section class="section" id="section-projects">
+            <h2 class="section__title">{{ strings.titles.projects }}</h2>
+            {% set entries = collections.projects %}
+            {% set microformat = "p-experience" %}
+            {% include "entrylist.njk" %}
+        </section>
+
         <section class="section" id="section-experience">
             <h2 class="section__title">{{ strings.titles.experience }}</h2>
             {% set entries = collections.work %}
@@ -60,6 +67,13 @@ layout: base
             {% include "repositories.njk" %}
         </section>
     {% endif %}
+
+        <section class="section" id="section-certifications">
+            <h2 class="section__title">{{ strings.titles.certifications }}</h2>
+            {% set entries = collections.certifications %}
+            {% set microformat = "p-education" %}
+            {% include "entrylist.njk" %}
+        </section>
 
     {% if collections.custom.length %}
         {% set custom = collections.custom|first %}

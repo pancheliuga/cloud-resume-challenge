@@ -1,7 +1,7 @@
 {
   "name": "crc-front-end",
   "version": "1.0.0",
-  "description": "",
+  "description": "An Online Resume",
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
@@ -12,7 +12,12 @@
     "clean": "del-cli dist"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pancheliuga/crc-front-end"
+  },
   "author": "Oleksandr Pancheliuga",
+  "homepage": "https://resume.pancheliuga.com/",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",

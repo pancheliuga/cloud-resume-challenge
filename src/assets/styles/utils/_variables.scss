@@ -27,16 +27,18 @@ $gray-lightest: #f7f7f9;
 
 // Brand Colors
 
-$brand-blue: #005b96;
-$brand-red: #fc6767;
+$brand-blue: #263147;
+$brand-pink: #fc6767;
+$brand-sand: #ffdeaa;
 
 // Color Mappings
 
-$bg-color: #fff;
-$text-color: $gray-darkest;
+$bg-color: #f9f4e3; 
+$text-color: $brand-blue;
+$link-color: #005b96;
 
 $primary-color: $brand-blue;
-$secondary-color: $brand-red;
+$secondary-color: $brand-pink;
 
 // Typography
 //

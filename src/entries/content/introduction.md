@@ -1,6 +1,6 @@
 ---
 tags: introduction
-title: About Me
+title: Personal Profile
 ---
 
-I am a web developer with over 12 years of experience in the front-end and a special background in digital design. My focus is on creating engaging, accessible & performant interfaces for humans. I am currently looking for new challenges.
+Skilled AWS Cloud Engineer ready to become a vital member of the next team I join. Passionate about automation, DevOps, serverless architecture, and leveraging cloud technologies to improve the agility and efficiency of businesses. Hands-on experience in building and architecting full-stack cloud projects.

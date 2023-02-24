@@ -3,6 +3,7 @@
         <h3 class="entry__title p-name">{{ entry.data.title }}</h3>
         
         <p class="entry__time">
+            {% if entry.data.start %}
             <time class="dt-start" datetime="{{ entry.data.start | dateToFormat("yyyy-MM-dd") }}">
                 {{ entry.data.start | dateToFormat("MM/yyyy") }}
             </time>
@@ -13,6 +14,7 @@
                 </time>
             {% else %}
                 <span>{{ strings.labels.present }}</span>
+            {% endif %}
             {% endif %}
         </p>
 
@@ -27,12 +29,31 @@
                     <span aria-hidden="true">&middot;</span>
                     <span class="p-location">{{ entry.data.location }}</span>
                 {% endif %}
+                {% if entry.data.credentialID %}
+                    <span aria-hidden="true">&middot;</span>
+                    <span class="p-location"> credential ID - {{ entry.data.credentialID }}</span>
+                {% endif %}
             </p>
         {% endif %}
+
+        {% if entry.data.description %}
+            <p class="entry__organization p-org h-card">
+                {% if entry.data.link %}
+                    <a href="{{ entry.data.link }}" class="p-name u-url" target="_blank" rel="noopener noreferrer">{{ entry.data.description }}</a>
+                {% else %}
+                    <span class="p-name">{{ entry.data.description }}</span>
+                {% endif %}
+                {% if entry.data.location %}
+                    <span aria-hidden="true">&middot;</span>
+                    <span class="p-location">{{ entry.data.location }}</span>
+                {% endif %}
+            </p>
+        {% endif %}
+
     </div>
 
     {% if entry.templateContent %}
-        <div class="entry__content p-summary">
+        <div class="markdown">
             {{ entry.templateContent | safe }}
         </div>
     {% endif %}
