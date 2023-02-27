@@ -26,20 +26,12 @@
     &__pronouns {
         font-size: 1.125rem;
         font-family: $font-family-serif;
-        color: $gray;
+        color: $gray-dark;
     }
     &__link {
         display: flex;
         align-items: center;
         margin-right: 1rem;
-
-        @include hover-focus {
-            text-decoration: none;
-            
-            .vcard__link-text {
-                text-decoration: underline;
-            }
-        }
 
         .icon {
             margin-right: 0.125em;
