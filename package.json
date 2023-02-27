@@ -10,7 +10,7 @@
     "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
     "clean": "del-cli dist",
-    "lint:html": "pa11y-ci -c .pa11yci.json './dist/**/*.html'"
+    "lint": "pa11y-ci -c .pa11yci.json './dist/**/*.html'"
   },
   "keywords": [],
   "repository": {

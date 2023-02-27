@@ -46,7 +46,7 @@ module.exports = class {
             }
             const minified = new CleanCSS().minify(css)
             if (!minified.styles) {
-                return reject(minified.error)
+                return reject(minified.errors)
             }
             resolve(minified.styles)
         })
