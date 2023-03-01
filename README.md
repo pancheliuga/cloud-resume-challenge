@@ -1,1 +1,1 @@
-# Front end Chunk for Cloud Resume Chalenge
+# Front end part for Cloud Resume Chalenge
