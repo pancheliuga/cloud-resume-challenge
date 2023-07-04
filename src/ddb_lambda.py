@@ -56,7 +56,10 @@ def lambda_handler(event, context):
     except ValueError:
         logging.error('Invalid IP address: {}'.format(ip_address))
 
-    response = dynamodb.scan()
+    response = dynamodb.scan(
+        # Scan the table to get the number of unique visitors
+        TableName='VisitorCountTable'
+    )
 
     if "Items" in response.keys():
         # Return the number of unique visitors
