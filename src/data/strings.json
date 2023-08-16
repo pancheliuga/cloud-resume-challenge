@@ -1,0 +1,18 @@
+{
+    "titles": {
+        "projects": "Projects",
+        "experience": "Employment History",
+        "education": "Education",
+        "skills": "Skills",
+        "languages": "Languages",
+        "open_source": "Open Source",
+        "certifications": "Licenses & Certifications"
+    },
+    "labels": {
+        "email": "Email",
+        "telephone": "Telephone",
+        "print": "Print Résumé",
+        "present": "Present",
+        "lastUpdated": "Last updated"
+    }
+}
