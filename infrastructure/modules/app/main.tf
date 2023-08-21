@@ -48,7 +48,7 @@ resource "aws_lambda_function" "app" {
   s3_bucket = aws_s3_bucket.app.id
   s3_key    = aws_s3_object.app.key
 
-  runtime = "python3.11"
+  runtime = "python3.9"
   handler = "ddb_lambda.lambda_handler"
 
   source_code_hash = data.archive_file.app.output_base64sha256
