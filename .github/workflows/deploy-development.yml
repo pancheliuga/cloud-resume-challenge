@@ -1,0 +1,11 @@
+name: Deploy Cloud Resume Challenge Development
+run-name: ${{ github.actor }} is deploying Cloud Resume Challenge in development.
+on: [pull_request]
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy-cloud-resume-challenge.yml
+    with:
+      backend-key: ${{ github.event.number }}
+      backend-bucket: pancheliuga-crc-tf-backend-development
+      target-environment: development
+    secrets: inherit

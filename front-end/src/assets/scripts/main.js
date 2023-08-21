@@ -2,7 +2,7 @@ import 'focus-visible'
 
 document.documentElement.classList.remove('no-js')
 
-const API = 'https://nbh86frdn8.execute-api.eu-central-1.amazonaws.com'
+const API = process.env.API_URL
 
 //Get Views
 async function getViews() {
