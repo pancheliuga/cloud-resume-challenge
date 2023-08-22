@@ -57,8 +57,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.target-environment }}
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       API_URL: ${{needs.deploy-app.outputs.app-url}}
     steps:
       - uses: actions/checkout@v3
