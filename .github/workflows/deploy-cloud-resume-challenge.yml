@@ -33,9 +33,6 @@ jobs:
         with:
           terraform_version: 1.4.4
           terraform_wrapper: false
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.13.0
       - name: Initialize app terraform
         run: |
           terraform init \
@@ -70,13 +67,15 @@ jobs:
           node-version: 18.13.0
       - name: Install web dependencies
         run: npm install
+        working-directory: ./front-end
       - name: Build web
         run: npm run build
+        working-directory: ./front-end
       - name: Archive web artifact
         uses: actions/upload-artifact@v3
         with:
           name: web-build
-          path: web/build
+          path: front-end/build
 
   deploy-web:
     needs: [deploy-app, build-web]
@@ -97,7 +96,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: web-build
-          path: web/build
+          path: front-end/build
       - name: Initialize web terraform
         run: |
           terraform init \
