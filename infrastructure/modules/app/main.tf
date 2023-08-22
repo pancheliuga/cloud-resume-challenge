@@ -199,7 +199,7 @@ resource "aws_lambda_permission" "app" {
   function_name = aws_lambda_function.app.function_name
   principal     = "apigateway.amazonaws.com"
 
-  source_arn = "${aws_apigatewayv2_api.app.execution_arn}/*/*/get-visitors"
+  source_arn = "${aws_apigatewayv2_api.app.execution_arn}/*/*/"
 }
 
 resource "aws_cloudwatch_log_group" "app_api" {
