@@ -8,7 +8,7 @@ provider "aws" {
 # See https://stackoverflow.com/a/46921393/6811810
 module "web_build" {
   source   = "hashicorp/dir/template"
-  base_dir = "${path.module}/../../../web/build"
+  base_dir = "${path.module}/../../../web/dist"
 }
 
 # Setup the S3 bucket. Set it to static web hosting.
