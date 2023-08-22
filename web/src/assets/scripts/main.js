@@ -7,7 +7,9 @@ const API = process.env.API_URL
 //Get Views
 async function getViews() {
     try {
-        let response = await fetch(API)
+        let response = await fetch(API, {
+            method: 'POST'
+        })
         let data = await response.json()
         return data
     } catch (error) {

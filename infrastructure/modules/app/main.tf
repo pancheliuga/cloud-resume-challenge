@@ -101,7 +101,7 @@ resource "aws_apigatewayv2_api" "app" {
   protocol_type = "HTTP"
 
   cors_configuration {
-    allow_methods = ["PATCH"]
+    allow_methods = ["POST"]
     allow_origins = ["*"]
   }
 
@@ -143,7 +143,7 @@ resource "aws_apigatewayv2_stage" "default" {
 resource "aws_apigatewayv2_route" "app" {
   api_id = aws_apigatewayv2_api.app.id
 
-  route_key = "PATCH /get-visitors"
+  route_key = "POST /"
   target    = "integrations/${aws_apigatewayv2_integration.app.id}"
 }
 

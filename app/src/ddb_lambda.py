@@ -1,10 +1,3 @@
-"""
-Create a lambda function that will be triggered by AWS API Gateway that accepts requests from my web app.
-This function will be responsible for handling requests which retrieve and update the visitor count in a DynamoDB database.
-Function has to only count unique visitors. (Hint: check the API Gateway request metadata for the IP address associated with the browser making the API call.
-Note: IP addresses may be considered PII (personally-identifying information) in some jurisdictions, so you have consider storing a one-way hash of the address instead
-"""
-
 import boto3
 import ipaddress
 import hashlib
@@ -31,13 +24,13 @@ def lambda_handler(event, context):
                 # Check if the IP address is already in the database
                 response = dynamodb.get_item(
                     Key={'IPHash': {'S': ip_hash}},
-                    TableName='VisitorCountTable'
+                    TableName='crc-tidy-bonefish-visitors-count'
                 )
 
                 if 'Item' not in response.keys():
                     # IP hash does not exist, create a new item with VisitorCount initialized to 1
                     dynamodb.put_item(
-                        TableName='VisitorCountTable',
+                        TableName='crc-tidy-bonefish-visitors-count',
                         Item={'IPHash': {'S': ip_hash}}
                     )
 
@@ -58,7 +51,7 @@ def lambda_handler(event, context):
 
     response = dynamodb.scan(
         # Scan the table to get the number of unique visitors
-        TableName='VisitorCountTable'
+        TableName='crc-tidy-bonefish-visitors-count'
     )
 
     if "Items" in response.keys():
