@@ -38,7 +38,7 @@ data "archive_file" "app" {
   type = "zip"
 
   output_path = "${path.module}/app.zip"
-  source_file  = "${path.module}/../../../back-end/src/ddb_lambda.py"
+  source_file  = "${path.module}/../../../app/src/ddb_lambda.py"
 }
 
 # Setup the Lambda function.
