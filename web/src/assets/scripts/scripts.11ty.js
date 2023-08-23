@@ -34,7 +34,8 @@ module.exports = class {
 
         // pass environment down to scripts
         const envPlugin = new webpack.EnvironmentPlugin({
-            ELEVENTY_ENV: process.env.ELEVENTY_ENV
+            ELEVENTY_ENV: process.env.ELEVENTY_ENV,
+            API_URL: process.env.API_URL
         })
 
         // Main Config
