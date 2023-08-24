@@ -122,7 +122,7 @@ resource "null_resource" "invalidate_cf_cache" {
   }
 
   triggers = {
-    dir_sha1 = sha1(join("", [for f in fileset(module.web_build.base_dir, "**"): filesha1(f)]))
+    dir_sha1 = sha1(join("", [for f in fileset("${path.module}/../../../web/dist", "**"): filesha1(f)]))
   }
 }
 
