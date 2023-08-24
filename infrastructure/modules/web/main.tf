@@ -115,17 +115,6 @@ resource "aws_cloudfront_distribution" "web" {
   }
 }
 
-# Invalidate the CF cache when S3 website is updated
-resource "null_resource" "invalidate_cf_cache" {
-  provisioner "local-exec" {
-    command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.web.id} --paths '/*'"
-  }
-
-  triggers = {
-    dir_sha1 = sha1(join("", [for f in fileset("${path.module}/../../../web/dist", "**"): filesha1(f)]))
-  }
-}
-
 resource "aws_acm_certificate" "web" {
   count = var.domain == null || var.domain == "" ? 0 : 1
 
