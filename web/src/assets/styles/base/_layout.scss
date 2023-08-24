@@ -22,9 +22,10 @@ body {
         background-color: var(--primary-color, $primary-color);
     }
     .footer {
+        color: $bg-color;
         grid-area: footer;
-        padding: $spacing-y 0;
-        background-color: $bg-color;
+        padding: $spacing-x 0;
+        background-color: $brand-dark;
     }
 
     @include mq(lg) {
