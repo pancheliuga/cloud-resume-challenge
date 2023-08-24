@@ -1,4 +1,5 @@
 import boto3
+import os
 import ipaddress
 import hashlib
 import logging
@@ -8,7 +9,7 @@ dynamodb = boto3.client('dynamodb')
 
 
 def lambda_handler(event, context):
-
+    table = os.environ.get('TF_VAR_database')
     # Retrieve the IP address from the request metadata
     ip_address = event['requestContext']['http']['sourceIp']
 
@@ -24,13 +25,13 @@ def lambda_handler(event, context):
                 # Check if the IP address is already in the database
                 response = dynamodb.get_item(
                     Key={'IPHash': {'S': ip_hash}},
-                    TableName='crc-tidy-bonefish-visitors-count'
+                    TableName=table
                 )
 
                 if 'Item' not in response.keys():
                     # IP hash does not exist, create a new item with VisitorCount initialized to 1
                     dynamodb.put_item(
-                        TableName='crc-tidy-bonefish-visitors-count',
+                        TableName=table,
                         Item={'IPHash': {'S': ip_hash}}
                     )
 
@@ -51,7 +52,7 @@ def lambda_handler(event, context):
 
     response = dynamodb.scan(
         # Scan the table to get the number of unique visitors
-        TableName='crc-tidy-bonefish-visitors-count'
+        TableName=table
     )
 
     if "Items" in response.keys():

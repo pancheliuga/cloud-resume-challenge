@@ -26,6 +26,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       TF_VAR_project: ${{ vars.TF_VAR_PROJECT }}
       TF_VAR_domain: ${{ vars.TF_VAR_APP_DOMAIN }}
+      TF_VAR_database: ${{ vars.TF_VAR_DATABASE }}
       TF_VAR_environment: ${{ inputs.target-environment }}
     steps:
       - uses: actions/checkout@v3
