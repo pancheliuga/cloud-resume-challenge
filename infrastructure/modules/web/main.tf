@@ -124,7 +124,7 @@ resource "null_resource" "invalidate_cf_cache" {
   for_each = aws_s3_object.web
 
   triggers = {
-    object_etag = each.value.digests.md5
+    object_etag = each.value.etag
   }
 }
 
