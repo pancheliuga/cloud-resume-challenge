@@ -121,7 +121,9 @@ resource "null_resource" "invalidate_cf_cache" {
     command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.web.id} --paths '/*'"
   }
   triggers = {
-    object_etag = aws_s3_object.web.etag
+    for_each = aws_s3_object.web
+
+    object_etag = each.value.etag
   }
 }
 
