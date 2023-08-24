@@ -121,7 +121,7 @@ resource "null_resource" "invalidate_cf_cache" {
     command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.web.id} --paths '/*'"
   }
   triggers = {
-    website_version_changed = aws_s3_object.web[each.key].version_id
+    website_version_changed = aws_s3_object.web.key.version_id
   }
 }
 
