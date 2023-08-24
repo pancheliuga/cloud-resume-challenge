@@ -9,7 +9,7 @@ dynamodb = boto3.client('dynamodb')
 
 
 def lambda_handler(event, context):
-    table = os.environ.get('TF_VAR_database')
+    table = os.environ('DDB_TABLE')
     # Retrieve the IP address from the request metadata
     ip_address = event['requestContext']['http']['sourceIp']
 

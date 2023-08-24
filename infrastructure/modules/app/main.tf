@@ -50,6 +50,12 @@ resource "aws_lambda_function" "app" {
 
   runtime = "python3.9"
   handler = "ddb_lambda.lambda_handler"
+  
+  environment {
+    variables = {
+      DDB_TABLE = aws_dynamodb_table.visitors_count.name
+    }
+  }
 
   source_code_hash = data.archive_file.app.output_base64sha256
 
