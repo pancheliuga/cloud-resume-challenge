@@ -121,9 +121,8 @@ resource "null_resource" "invalidate_cf_cache" {
     command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.web.id} --paths '/*'"
   }
 
-  for_each = module.web_build.files
-
   triggers = {
+    for_each = module.web_build.files
     source_hash = filemd5(each.value.source)
   }
 }
