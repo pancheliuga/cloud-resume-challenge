@@ -122,6 +122,7 @@ resource "null_resource" "invalidate_cf_cache" {
   }
   triggers = {
     object_etag = aws_s3_object.web.etag
+  }
 }
 
 resource "aws_acm_certificate" "web" {
