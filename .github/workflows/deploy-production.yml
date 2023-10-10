@@ -1,9 +1,9 @@
-name: Deploy Cloud Resume Challenge Production
-run-name: ${{ github.actor }} is deploying Cloud Resume Challenge in production.
+name: Deploy Cloud Resume Challenge in Production Environment
+run-name: ${{ github.actor }} is deploying Cloud Resume Challenge in production environment.
 on:
   push:
     branches:
-      - "main"
+      - 'main'
 jobs:
   deploy:
     uses: ./.github/workflows/deploy-cloud-resume-challenge.yml
