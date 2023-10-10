@@ -114,15 +114,13 @@ jobs:
         if: github.event_name == 'pull_request'
         env:
           OUTPUT: '${{ steps.web-output.outputs.web-url }}'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const output = `#### Preview Environment Website Url 🖌
             \`\`\`
             ${process.env.OUTPUT}
             \`\`\`
             `
-            github.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
