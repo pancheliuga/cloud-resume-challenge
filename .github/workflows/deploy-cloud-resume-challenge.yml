@@ -115,6 +115,7 @@ jobs:
         env:
           OUTPUT: '${{ steps.web-output.outputs.web-url }}'
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const output = `#### Preview Environment Website Url 🖌
             \`\`\`
