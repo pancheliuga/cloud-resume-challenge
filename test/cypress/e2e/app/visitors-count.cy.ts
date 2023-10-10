@@ -9,7 +9,7 @@ describe("POST", () => {
       }).should((response) => {
         expect(response.status).to.eq(200);
         var views = JSON.parse(response.body);
-        expect(views).to.be.a("string");
+        expect(views).to.equal(1)
       });
     });
   });
