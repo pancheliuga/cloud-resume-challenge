@@ -1,5 +1,5 @@
-name: Deploy Cloud Resume Challenge Development
-run-name: ${{ github.actor }} is deploying Cloud Resume Challenge in development.
+name: Deploy Cloud Resume Challenge in Preview Environment
+run-name: ${{ github.actor }} is deploying Cloud Resume Challenge in preview environment.
 on: [pull_request]
 jobs:
   deploy:
@@ -7,5 +7,5 @@ jobs:
     with:
       backend-key: ${{ github.event.number }}
       backend-bucket: pancheliuga-crc-tf-backend-development
-      target-environment: development
+      target-environment: preview
     secrets: inherit
