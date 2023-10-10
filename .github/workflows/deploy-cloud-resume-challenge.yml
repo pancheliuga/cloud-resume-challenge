@@ -112,3 +112,19 @@ jobs:
     outputs:
       web-url: ${{ steps.web-output.outputs.web-url }}
 
+  test:
+    needs: [deploy-app, deploy-web]
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.target-environment }}
+    env:
+      WEB_URL: ${{needs.deploy-web.outputs.web-url}}
+      API_URL: ${{needs.deploy-app.outputs.app-url}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.13.0
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          working-directory: ./test

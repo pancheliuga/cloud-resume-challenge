@@ -1,0 +1,17 @@
+{
+  "name": "crc-test",
+  "version": "1.0.0",
+  "description": "E2E tests for https://resume.pancheliuga.com/ as part of the Cloud Resume Challenge",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "keywords": [],
+  "author": "Oleksandr Pancheliuga",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.3.0",
+    "dotenv": "^16.3.1",
+    "typescript": "^5.2.2"
+  }
+}
