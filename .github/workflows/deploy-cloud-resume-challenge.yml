@@ -109,6 +109,24 @@ jobs:
         run: |
           echo "web-url=$(terraform output -raw web_url)" >> "$GITHUB_OUTPUT"
         working-directory: ./infrastructure/web
+      - name: Create comment with Terraform output
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        env:
+          OUTPUT: '${{ steps.web-output.outputs.web-url }}'
+        with:
+          script: |
+            const output = `#### Preview Environment Website Url 🖌
+            \`\`\`
+            ${process.env.OUTPUT}
+            \`\`\`
+            `
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
     outputs:
       web-url: ${{ steps.web-output.outputs.web-url }}
 
