@@ -6,6 +6,7 @@ export default defineConfig({
       // implement node event listeners here
     },
     baseUrl: process.env.WEB_URL,
+    supportFile: false,
   },
   env: {
     api: process.env.API_URL,
