@@ -27,6 +27,7 @@ jobs:
       TF_VAR_project: ${{ vars.TF_VAR_PROJECT }}
       TF_VAR_domain: ${{ vars.TF_VAR_APP_DOMAIN }}
       TF_VAR_environment: ${{ inputs.target-environment }}
+      TF_VAR_alarm_email: ${{ vars.TF_VAR_ALARM_EMAIL }}
     steps:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2

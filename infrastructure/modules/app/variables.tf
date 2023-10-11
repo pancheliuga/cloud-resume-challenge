@@ -12,6 +12,13 @@ variable "domain" {
 
 variable "environment" {
   type        = string
-  default     = "development"
+  default     = "preview"
   description = "The type of environment where this Cloud Resume Challenge is deployed. This is used for resource tagging."
+}
+
+variable "alarm_email" {
+  type        = string
+  default     = null
+  description = "The email address to send alarm notifications to."
+  nullable    = true
 }
