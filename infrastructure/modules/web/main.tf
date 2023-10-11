@@ -116,11 +116,18 @@ resource "aws_cloudfront_distribution" "web" {
 }
 
 resource "null_resource" "invalidate_cf_cache" {
+  count = var.domain == null || var.domain == "" ? 0 : 1
+
   provisioner "local-exec" {
     command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.web.id} --paths '/*'"
   }
+
   triggers = {
     website_version_changed = aws_s3_object.web["index.html"].version_id
+  }
+
+  lifecycle {
+    create_before_destroy = true
   }
 }
 
