@@ -32,4 +32,5 @@ module "app" {
   domain = var.domain
 
   environment = var.environment
+  alarm_email = var.alarm_email
 }

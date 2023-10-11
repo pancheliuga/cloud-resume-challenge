@@ -213,3 +213,75 @@ resource "aws_cloudwatch_log_group" "app_api" {
 
   retention_in_days = 30
 }
+
+# Setup CloudWatch alarms and email alerts.
+resource "aws_sns_topic" "app" {
+  name = "${var.project}-alarms"
+}
+
+resource "aws_sns_topic_subscription" "app" {
+  count = var.alarm_email == null || var.alarm_email == "" ? 0 : 1
+
+  topic_arn = aws_sns_topic.app.arn
+  protocol  = "email"
+  endpoint  = var.alarm_email
+}
+
+resource "aws_cloudwatch_metric_alarm" "app_api_latency" {
+  alarm_name                = "${var.project}-api-latency"
+  comparison_operator       = "GreaterThanThreshold"
+  evaluation_periods        = 1
+  metric_name               = "Latency"
+  namespace                 = "AWS/ApiGateway"
+  period                    = 300
+  statistic                 = "Average"
+  threshold                 = 3000
+  alarm_description         = "Project: ${var.project}\nEnvironment: ${var.environment}\n\nThe HTTP API Gateway for the Cloud Resume Challenge has had a sudden increase in latency for the past 5 minutes. You may need to check the HTTP API Gateway and determine the cause of the error."
+  insufficient_data_actions = []
+
+  dimensions = {
+    ApiName = aws_apigatewayv2_api.app.name
+    Stage   = aws_apigatewayv2_stage.default.name
+  }
+
+  alarm_actions = [aws_sns_topic.app.arn]
+}
+
+resource "aws_cloudwatch_metric_alarm" "app_api_count" {
+  alarm_name                = "${var.project}-api-count"
+  comparison_operator       = "GreaterThanThreshold"
+  evaluation_periods        = 1
+  metric_name               = "Count"
+  namespace                 = "AWS/ApiGateway"
+  period                    = 300
+  statistic                 = "Sum"
+  threshold                 = 100
+  alarm_description         = "Project: ${var.project}\nEnvironment: ${var.environment}\n\nThe HTTP API Gateway for the Cloud Resume Challenge has encountered a sudden amount of API calls for the last 5 minutes. You may need to check the API calls made and determine if this is a DDoS attack or just a sudden influx of users."
+  insufficient_data_actions = []
+
+  dimensions = {
+    ApiName = aws_apigatewayv2_api.app.name
+    Stage   = aws_apigatewayv2_stage.default.name
+  }
+
+  alarm_actions = [aws_sns_topic.app.arn]
+}
+
+resource "aws_cloudwatch_metric_alarm" "app_lambda_error" {
+  alarm_name                = "${var.project}-lambda-error"
+  comparison_operator       = "GreaterThanThreshold"
+  evaluation_periods        = 1
+  metric_name               = "Errors"
+  namespace                 = "AWS/Lambda"
+  period                    = 3600
+  statistic                 = "Sum"
+  threshold                 = 5
+  alarm_description         = "Project: ${var.project}\nEnvironment: ${var.environment}\n\nThe Lambda function has encountered a sudden amount of errors for the past hour. You may need to check the lambda function and determine the cause of the error."
+  insufficient_data_actions = []
+
+  dimensions = {
+    FunctionName = aws_lambda_function.app.function_name
+  }
+
+  alarm_actions = [aws_sns_topic.app.arn]
+}

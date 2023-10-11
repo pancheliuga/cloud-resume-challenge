@@ -13,6 +13,13 @@ variable "domain" {
 
 variable "environment" {
   type        = string
-  default     = "development"
+  default     = "preview"
   description = "The type of environment where this project is deployed. This is use for resource tagging."
+}
+
+variable "alarm_email" {
+  type        = string
+  default     = null
+  description = "The email address to send alarm notifications to."
+  nullable    = true
 }
