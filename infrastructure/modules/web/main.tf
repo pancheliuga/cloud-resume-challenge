@@ -119,7 +119,7 @@ resource "null_resource" "invalidate_cf_cache" {
   count = var.domain == null || var.domain == "" ? 0 : 1
 
   provisioner "local-exec" {
-    command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.web.id} --paths '/*'"
+    command = "aws cloudfront create-invalidation --debug true --distribution-id ${aws_cloudfront_distribution.web.id} --paths '/*'"
   }
 
   triggers = {
