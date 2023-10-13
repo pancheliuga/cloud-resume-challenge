@@ -1,6 +1,6 @@
 {
     "name": "Oleksandr Pancheliuga",
-    "occupation": "DevOps/Cloud Engineer",
+    "occupation": "Cloud/DevOps Engineer",
     "location": "Rivne, Ukraine",
     "avatar": "avatar.png",
     "pronouns": "he/him",
@@ -8,9 +8,12 @@
     "telephone": "+38 097 645 01 74",
     "website": "https://pancheliuga.com",
     "skills": [
-        "AWS (EC2, S3, ECS, Lambda, VPC, Cloud Formation, RDS, DynamoDB, ELB, Auto scaling, IAM, Route53, SNS, Cloud Trail, Cloud Watch, AWS Conﬁg and many other services)",
+        "Full-Stack Software Development, SDLC, CI/CD",
+        "AWS (EC2, S3, ECS, Lambda, VPC, Cloud Formation, RDS, DynamoDB, ELB, Auto scaling, IAM, Route53, SNS, CloudFront, Cloud Trail, Cloud Watch, AWS Organizations and many other services)",
+        "Linux, Docker",
+        "DNS, HTTP/S, TCP/IP",
         "Python, Bash, Javascript",
-        "Terraform, GitHub Actions",
+        "Terraform, GitHub Actions, Jenkins",
         "Effective Time Management",
         "Ability to communicate effectively",
         "Excitement for learning"
@@ -38,4 +41,3 @@
         }
     ]
 }
-
