@@ -3,4 +3,4 @@ tags: introduction
 title: Personal Profile
 ---
 
-Skilled AWS Cloud Engineer ready to become a vital member of the next team I join. Passionate about automation, DevOps, serverless architecture, and leveraging cloud technologies to improve the agility and efficiency of businesses. Hands-on experience in building and architecting full-stack cloud projects.
+Adaptable Cloud Engineer with a versatile background, blending expertise in spatial data processing and GIS analysis with hands-on experience in cloud architecture and DevOps best practices. Passionate about automation, serverless architecture, and leveraging cloud technologies to enhance business agility and efficiency. My journey has evolved from a land surveyor to a Cloud Engineer, illuminated by Cloud Computing, AI, MLOps, DevOps, CI/CD, and Automation. I'm dedicated to driving innovation and continuously improving my skills.

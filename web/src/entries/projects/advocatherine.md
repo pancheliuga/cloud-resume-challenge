@@ -1,10 +1,12 @@
 ---
-title: Personal/blog website of Attorney at Law
-description: My wife's business website for marketing and online presence
-link: https://advocatherine.expert
-displayOrder: 4
+title: Attorney at Law Website
+description: The online platform of Attorney at Law, where legal expertise meets the digital world
+link: https://pancheliuga.com/projects/attorney-at-law-website-empowering-legal-excellence-online/
+displayOrder: 2
 ---
 
-- Static Site Generator (Eleventy)
-- Front-end (HTML, Sass, Gulp, Javascript)
-- CI/CD (Netlify + GitHub)
+-   Jamstack Architecture with Eleventy SSG at its core
+-   Modern CSS Methodologies: Skilled in crafting fluid typography, flexible layouts, and progressive enhancement to ensure a superior user experience. Adept at optimizing CSS for performance and achieving high Lighthouse scores, enhancing user interaction, SEO potential, and overall site performance.
+-   Git as a Content Management System (CMS)
+-   Front-end Technologies including HTML, CSS, and JavaScript
+-   Leveraging Netlify PaaS for DNS management, CI/CD integration, and advanced form handling with Slack integration

@@ -1,12 +1,16 @@
 ---
-title: Forrest Brazeal's Cloud Resume Challenge
-description: AWS-based full-stack serverless coding project
-link: https://resume.pancheliuga.com
+title: Cloud Resume Challenge
+description: AWS-based full-stack serverless project
+link: https://pancheliuga.com/projects/cloud-resume-challenge:-showcasing-my-cloud-expertise/
 displayOrder: 1
 ---
 
-- Setup and safety (AWS Organizations with OUs + org-formation, AWS SSO, set up AWS billing alerts)
-- Building the front end (HTML, CSS, Static S3 Website, HTTPS, Amazon CloudFront, DNS - Amazon Route 53)
-- Building a cloud-based API (database - DynamoDB, AWS’s API Gateway + Lambda, Python + boto3)
-- Front-end/back-end integration (Javascript, tests- Cypress)
-- Automation/CI (IaC - Terraform, CI/CD - GitHub Actions, diff ENV)
+-   Full-stack software development, which encompassed both the static website and Python components.
+-   Version control using GitHub, essential for collaborative projects.
+-   Infrastructure as code (IaC) with Terraform, allowing for efficient and automated resource provisioning.
+-   Continuous integration and delivery (CI/CD) by connecting GitHub Actions, Terraform, and AWS.
+-   Exploring various cloud services and diving into serverless architecture, including Lambda, API Gateway, DynamoDB, CloudFront, and S3.
+-   Understanding application security with a focus on IAM, S3 policies, CORS, and API authentication/authorization.
+-   Navigating networking in the cloud world, including DNS, CDN, and the broader cloud infrastructure.
+-   Implementing end-to-end testing solutions with Cypress to ensure the reliability and functionality of the application.
+-   Setting up monitoring solutions with CloudWatch to track the performance and health of the cloud-based infrastructure, including alarms for anomalies and issues.
